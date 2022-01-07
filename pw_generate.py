@@ -1,5 +1,5 @@
+#!/usr/bin/python3
 import os, hashlib
-
 
 # 안내 문구 출력
 print("Password is generated as an under format\n > [Default Word]@[Website Name]][Website Count]")
