@@ -1,3 +1,6 @@
+import os, hashlib
+
+
 # 안내 문구 출력
 print("Password is generated as an under format\n > [Default Word]@[Website Name]][Website Count]")
 
@@ -19,4 +22,10 @@ password = str(default) + "@" + str(pw_info[0].upper()) + str(pw_info[1:]) + str
 # URL의 이름
 name = pw_info[0].upper() + pw_info[1:]
 
-print("{0}'s password is \"{1}\".".format(name, password))
+# 비밀번호 해쉬값
+pw_hash = hashlib.md5(str(password).encode('utf-8')).hexdigest()
+
+print("{0}'s password : {1}".format(name, password))
+print("<Hash: {}>".format(pw_hash))
+
+os.system("pause")
