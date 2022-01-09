@@ -54,16 +54,6 @@ class FlyableUnit(Unit, Flyable):
 # 건물
 class BuildingUnit(Unit):
     def __init__(self, name, hp, location):
-        pass # 아무것도 안하고 그냥 넘어간다. 완성된 것처럼
-
-# 서플라이 디폿: 건물, 1개 건물 = 8 유닛 생성 가능.
-supply_depot = BuildingUnit("서플라이 디폿", 500, "7시")
-
-def game_start():
-    print("[알림] 새로운 게임을 시작합니다.")
-
-def game_over():
-    pass
-
-game_start()
-game_over()
+        #Unit.__init__(self, name, hp, 0)
+        super().__init__(name, hp, 0) # 부모 클래스에서 가져옴
+        self.location = location
